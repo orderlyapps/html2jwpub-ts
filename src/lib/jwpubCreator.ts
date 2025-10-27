@@ -271,7 +271,7 @@ export class JwpubCreator {
 
     // Export database
     const dbData = this.db.export();
-    const dbBlob = new Blob([dbData], { type: 'application/octet-stream' });
+    const dbBlob = new Blob([dbData as any], { type: 'application/octet-stream' });
 
     // Create contents file (zip of database + media)
     const contentsZip = new JSZip();
