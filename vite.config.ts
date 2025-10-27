@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/html2jwpub-ts/',
+  base: '/html2jwpub/',
   plugins: [react()],
   optimizeDeps: {
     exclude: ['sql.js']
