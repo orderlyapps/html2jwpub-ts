@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Section Article</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        nav {
+            background: #f5f5f5;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        nav a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .highlight {
+            background-color: #fffacd;
+            padding: 2px 4px;
+        }
+        .note {
+            background: #e8f4fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 1em 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Complete Guide to JWPUB Conversion</h1>
+        <p><em>A comprehensive multi-section article example</em></p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#best-practices">Best Practices</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+        </ul>
+    </nav>
+    
+    <section id="introduction">
+        <h2>1. Introduction</h2>
+        <p>Welcome to this comprehensive guide on converting HTML files to the JWPUB publication format. This multi-section article demonstrates how larger documents with multiple sections can be effectively converted.</p>
+        
+        <p>The JWPUB format is used for digital publications and includes:</p>
+        <ul>
+            <li>Encrypted content storage</li>
+            <li>Embedded multimedia support</li>
+            <li>Structured database format</li>
+            <li>Compressed packaging</li>
+        </ul>
+    </section>
+    
+    <section id="getting-started">
+        <h2>2. Getting Started</h2>
+        
+        <h3>2.1 Prerequisites</h3>
+        <p>Before you begin, ensure you have the following:</p>
+        <ol>
+            <li>HTML files prepared for conversion</li>
+            <li>Any associated media files organized in <code>_files</code> folders</li>
+            <li>Publication metadata (title, symbol, year)</li>
+        </ol>
+        
+        <h3>2.2 File Organization</h3>
+        <p>Organize your files following this structure:</p>
+        <pre>
+my-publication/
+├── article1.html
+├── article1_files/
+│   ├── image1.jpg
+│   └── image2.png
+├── article2.html
+└── article2_files/
+    └── diagram.svg
+        </pre>
+        
+        <div class="note">
+            <strong>Note:</strong> The converter automatically detects media files in folders named <code>[filename]_files</code> or <code>[filename].html_files</code>.
+        </div>
+    </section>
+    
+    <section id="features">
+        <h2>3. Features</h2>
+        
+        <h3>3.1 Content Encryption</h3>
+        <p>All HTML content is encrypted using <span class="highlight">AES-128-CBC encryption</span> with zlib compression. The encryption key is derived from your publication metadata.</p>
+        
+        <h3>3.2 Database Structure</h3>
+        <p>The converter creates a SQLite database with the following key tables:</p>
+        <ul>
+            <li><code>Publication</code> - Publication metadata</li>
+            <li><code>Document</code> - Encrypted HTML content</li>
+            <li><code>Multimedia</code> - Media file references</li>
+            <li><code>PublicationViewItem</code> - Navigation structure</li>
+        </ul>
+        
+        <h3>3.3 Manifest Generation</h3>
+        <p>A manifest.json file is automatically generated with:</p>
+        <ul>
+            <li>SHA-256 content hash</li>
+            <li>Publication metadata</li>
+            <li>Timestamp information</li>
+            <li>File size and compression details</li>
+        </ul>
+    </section>
+    
+    <section id="best-practices">
+        <h2>4. Best Practices</h2>
+        
+        <h3>4.1 HTML Guidelines</h3>
+        <ol>
+            <li>Use semantic HTML5 elements</li>
+            <li>Include proper headings hierarchy (h1, h2, h3)</li>
+            <li>Add alt text to all images</li>
+            <li>Validate HTML before conversion</li>
+        </ol>
+        
+        <h3>4.2 Media Guidelines</h3>
+        <ul>
+            <li>Optimize images before adding them</li>
+            <li>Use appropriate formats (JPEG for photos, PNG for graphics)</li>
+            <li>Keep file sizes reasonable</li>
+            <li>Use descriptive file names</li>
+        </ul>
+        
+        <h3>4.3 Publication Metadata</h3>
+        <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Title</td>
+                    <td>Publication title</td>
+                    <td>Watchtower 2022</td>
+                </tr>
+                <tr>
+                    <td>Symbol</td>
+                    <td>Publication code</td>
+                    <td>w22</td>
+                </tr>
+                <tr>
+                    <td>Year</td>
+                    <td>Publication year</td>
+                    <td>2022</td>
+                </tr>
+                <tr>
+                    <td>Language Index</td>
+                    <td>MEPS language code</td>
+                    <td>1 (English)</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section id="troubleshooting">
+        <h2>5. Troubleshooting</h2>
+        
+        <h3>5.1 Common Issues</h3>
+        
+        <h4>Media Files Not Found</h4>
+        <p><strong>Problem:</strong> Images don't appear in the converted publication.</p>
+        <p><strong>Solution:</strong> Ensure media files are in a folder named <code>[filename]_files</code> and paths in HTML match exactly.</p>
+        
+        <h4>Conversion Fails</h4>
+        <p><strong>Problem:</strong> The conversion process stops with an error.</p>
+        <p><strong>Solution:</strong> Check that:</p>
+        <ul>
+            <li>HTML files are valid</li>
+            <li>All required metadata is provided</li>
+            <li>File paths don't contain special characters</li>
+        </ul>
+        
+        <h4>Large File Size</h4>
+        <p><strong>Problem:</strong> The generated .jwpub file is too large.</p>
+        <p><strong>Solution:</strong> Optimize images and remove unnecessary content or inline styles.</p>
+        
+        <div class="note">
+            <strong>Tip:</strong> Always test with a small sample file first before converting large publications.
+        </div>
+    </section>
+    
+    <footer>
+        <hr>
+        <p><em>This example demonstrates a comprehensive multi-section article with navigation, formatting, and structured content suitable for JWPUB conversion.</em></p>
+    </footer>
+</body>
+</html>

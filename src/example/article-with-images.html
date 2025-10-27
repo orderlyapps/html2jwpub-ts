@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article with Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1em 0;
+        }
+        figure {
+            margin: 1.5em 0;
+            text-align: center;
+        }
+        figcaption {
+            font-style: italic;
+            color: #666;
+            margin-top: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Article with Multimedia Content</h1>
+    
+    <p>This example demonstrates how to include images in your HTML content. The converter will process these images and include them in the .jwpub publication.</p>
+    
+    <h2>Including Images</h2>
+    <p>Images should be stored in a folder named <code>article-with-images_files</code> or <code>article-with-images.html_files</code> in the same directory as this HTML file.</p>
+    
+    <figure>
+        <img src="article-with-images_files/sample-image-1.jpg" alt="Sample Image 1">
+        <figcaption>Figure 1: A sample image with caption</figcaption>
+    </figure>
+    
+    <h2>Multiple Images</h2>
+    <p>You can include multiple images throughout your document. Each image will be processed and included in the publication database.</p>
+    
+    <figure>
+        <img src="article-with-images_files/sample-image-2.png" alt="Sample Image 2">
+        <figcaption>Figure 2: Another example image</figcaption>
+    </figure>
+    
+    <h2>Image References</h2>
+    <p>The converter automatically detects media files referenced in your HTML and includes them in the .jwpub package. Supported formats include:</p>
+    <ul>
+        <li>JPEG/JPG images</li>
+        <li>PNG images</li>
+        <li>GIF images</li>
+        <li>SVG graphics</li>
+    </ul>
+    
+    <p>Make sure all referenced media files exist in the appropriate <code>_files</code> folder before conversion.</p>
+    
+    <h2>Best Practices</h2>
+    <ul>
+        <li>Use descriptive file names for images</li>
+        <li>Always include alt text for accessibility</li>
+        <li>Optimize images for web to reduce file size</li>
+        <li>Use appropriate image formats (JPEG for photos, PNG for graphics)</li>
+    </ul>
+</body>
+</html>
